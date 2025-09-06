@@ -340,23 +340,208 @@ document.addEventListener("DOMContentLoaded", () => {
         modalImg.src = currentGalleryImages[currentImageIndex].src;
     });
 
+
     // كود الترجمة (Translation Code)
     const translations = {
         ar: {
-            // أضف كل المفاتيح والقيم العربية هنا
-            // ...
+            headerTitle: "رحلات الغردقة",
+            headerSubtitle: "اكتشف أجمل المغامرات في البحر والصحراء",
+            searchPlaceholder: "ابحث عن رحلة...",
+            searchButton: "بحث",
+            seaTripsTitle: "رحلات بحرية",
+            giftunTripTitle: "رحلة جزيرة الجفتون",
+            giftunTripDesc: "استمتع بالسباحة والغوص في أجمل الشعاب المرجانية.",
+            priceGiftun: "السعر: 25 €",
+            snorkelingTripTitle: "رحلة سنوركلينج",
+            snorkelingTripDesc: "يوم كامل من الاستمتاع بالحياة البحرية الملونة.",
+            priceSnorkeling: "السعر: 30 €",
+            safariTripsTitle: "رحلات سفاري",
+            quadTripTitle: "سفاري بيتش باجي",
+            quadTripDesc: "مغامرة مثيرة في قلب الصحراء مع قيادة الدراجات الرباعية.",
+            priceQuad: "السعر: 25 €",
+            bedouinDinnerTitle: "عشاء بدوي في الصحراء",
+            bedouinDinnerDesc: "استمتع بتجربة فريدة وعشاء لذيذ تحت النجوم.",
+            priceBedouin: "السعر: 30 €",
+            culturalTripsTitle: "رحلات الأقصر والقاهرة",
+            luxorTripTitle: "رحلة إلى الأقصر",
+            luxorTripDesc: "اكتشف التاريخ القديم لوادي الملوك ومعبد الكرنك.",
+            priceLuxor: "السعر: 60 €",
+            cairoTripTitle: "رحلة إلى القاهرة",
+            cairoTripDesc: "شاهد أهرامات الجيزة، أبو الهول، والمتحف المصري.",
+            priceCairo: "السعر: 80 €",
+            mapTitle: "مواقعنا",
+            contactFormTitle: "لديك أسئلة؟ تواصل معنا",
+            contactFormSubtitle: "املأ النموذج وسنعاود الاتصال بك قريبًا.",
+            formNameLabel: "الاسم:",
+            formEmailLabel: "البريد الإلكتروني:",
+            formMessageLabel: "رسالتك:",
+            formSubmitButton: "أرسل الرسالة",
+            footerText: "جميع الحقوق محفوظة © 2025",
+            bookButton: "احجز الآن"
         },
         en: {
-            // ...
+            headerTitle: "Hurghada Trips",
+            headerSubtitle: "Discover the most beautiful adventures in the sea and desert",
+            searchPlaceholder: "Search for a trip...",
+            searchButton: "Search",
+            seaTripsTitle: "Sea Trips",
+            giftunTripTitle: "Giftun Island Trip",
+            giftunTripDesc: "Enjoy swimming and diving in the most beautiful coral reefs.",
+            priceGiftun: "Price: 25 €",
+            snorkelingTripTitle: "Snorkeling Trip",
+            snorkelingTripDesc: "A full day of enjoying the colorful marine life.",
+            priceSnorkeling: "Price: 30 €",
+            safariTripsTitle: "Safari Trips",
+            quadTripTitle: "Quad Bike Safari",
+            quadTripDesc: "An exciting adventure in the heart of the desert with quad biking.",
+            priceQuad: "Price: 25 €",
+            bedouinDinnerTitle: "Bedouin Dinner in the Desert",
+            bedouinDinnerDesc: "Enjoy a unique experience and a delicious dinner under the stars.",
+            priceBedouin: "Price: 30 €",
+            culturalTripsTitle: "Luxor and Cairo Trips",
+            luxorTripTitle: "Trip to Luxor",
+            luxorTripDesc: "Discover the ancient history of the Valley of the Kings and Karnak Temple.",
+            priceLuxor: "Price: 60 €",
+            cairoTripTitle: "Trip to Cairo",
+            cairoTripDesc: "See the Giza Pyramids, the Sphinx, and the Egyptian Museum.",
+            priceCairo: "Price: 80 €",
+            mapTitle: "Our Locations",
+            contactFormTitle: "Have Questions? Contact Us",
+            contactFormSubtitle: "Fill out the form and we will get back to you shortly.",
+            formNameLabel: "Name:",
+            formEmailLabel: "Email:",
+            formMessageLabel: "Your Message:",
+            formSubmitButton: "Send Message",
+            footerText: "All rights reserved © 2025",
+            bookButton: "Book Now"
         },
         de: {
-            // ...
+            headerTitle: "Hurghada Ausflüge",
+            headerSubtitle: "Entdecken Sie die schönsten Abenteuer im Meer und in der Wüste",
+            searchPlaceholder: "Suchen Sie einen Ausflug...",
+            searchButton: "Suchen",
+            seaTripsTitle: "Meeresausflüge",
+            giftunTripTitle: "Giftun Insel Ausflug",
+            giftunTripDesc: "Genießen Sie Schwimmen und Tauchen in den schönsten Korallenriffen.",
+            priceGiftun: "Preis: 25 €",
+            snorkelingTripTitle: "Schnorchel-Ausflug",
+            snorkelingTripDesc: "Ein ganzer Tag voller Genuss des farbenfrohen Meereslebens.",
+            priceSnorkeling: "Preis: 30 €",
+            safariTripsTitle: "Safari-Ausflüge",
+            quadTripTitle: "Quad-Bike-Safari",
+            quadTripDesc: "Ein aufregendes Abenteuer im Herzen der Wüste mit Quad-Bikes.",
+            priceQuad: "Preis: 25 €",
+            bedouinDinnerTitle: "Beduinen-Abendessen in der Wüste",
+            bedouinDinnerDesc: "Genießen Sie eine einzigartige Erfahrung und ein köstliches Abendessen unter den Sternen.",
+            priceBedouin: "Preis: 30 €",
+            culturalTripsTitle: "Luxor- und Kairo-Ausflüge",
+            luxorTripTitle: "Ausflug nach Luxor",
+            luxorTripDesc: "Entdecken Sie die antike Geschichte des Tals der Könige und des Karnak-Tempels.",
+            priceLuxor: "Preis: 60 €",
+            cairoTripTitle: "Ausflug nach Kairo",
+            cairoTripDesc: "Sehen Sie die Pyramiden von Gizeh, die Sphinx und das Ägyptische Museum.",
+            priceCairo: "Preis: 80 €",
+            mapTitle: "Unsere Standorte",
+            contactFormTitle: "Haben Sie Fragen? Kontaktieren Sie uns",
+            contactFormSubtitle: "Füllen Sie das Formular aus, und wir werden uns in Kürze bei Ihnen melden.",
+            formNameLabel: "Name:",
+            formEmailLabel: "E-Mail:",
+            formMessageLabel: "Ihre Nachricht:",
+            formSubmitButton: "Nachricht senden",
+            footerText: "Alle Rechte vorbehalten © 2025",
+            bookButton: "Jetzt buchen"
         },
         ro: {
-            // ...
+            headerTitle: "Excursii Hurghada",
+            headerSubtitle: "Descoperiți cele mai frumoase aventuri în mare și deșert",
+            searchPlaceholder: "Căutați o excursie...",
+            searchButton: "Căutați",
+            seaTripsTitle: "Excursii pe mare",
+            giftunTripTitle: "Excursie pe insula Giftun",
+            giftunTripDesc: "Bucurați-vă de înot și scufundări în cele mai frumoase recife de corali.",
+            priceGiftun: "Preț: 25 €",
+            snorkelingTripTitle: "Excursie de snorkeling",
+            snorkelingTripDesc: "O zi întreagă de distracție cu viața marină colorată.",
+            priceSnorkeling: "Preț: 30 €",
+            safariTripsTitle: "Excursii de safari",
+            quadTripTitle: "Safari cu Quad-Bike",
+            quadTripDesc: "O aventură palpitantă în inima deșertului cu quad-uri.",
+            priceQuad: "Preț: 25 €",
+            bedouinDinnerTitle: "Cină beduină în deșert",
+            bedouinDinnerDesc: "Bucurați-vă de o experiență unică și o cină delicioasă sub stele.",
+            priceBedouin: "Preț: 30 €",
+            culturalTripsTitle: "Excursii la Luxor și Cairo",
+            luxorTripTitle: "Excursie la Luxor",
+            luxorTripDesc: "Descoperiți istoria antică a Văii Regilor și Templului Karnak.",
+            priceLuxor: "Preț: 60 €",
+            cairoTripTitle: "Excursie la Cairo",
+            cairoTripDesc: "Vedeți Piramidele din Giza, Sfinxul și Muzeul Egiptean.",
+            priceCairo: "Preț: 80 €",
+            mapTitle: "Locațiile noastre",
+            contactFormTitle: "Aveți întrebări? Contactați-ne",
+            contactFormSubtitle: "Completați formularul și vă vom contacta în curând.",
+            formNameLabel: "Nume:",
+            formEmailLabel: "E-mail:",
+            formMessageLabel: "Mesajul dvs.:",
+            formSubmitButton: "Trimiteți mesajul",
+            footerText: "Toate drepturile rezervate © 2025",
+            bookButton: "Rezervați acum"
         }
     };
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        document.querySelector('body').style.textAlign = (lang === 'ar') ? 'right' : 'left';
+
+        const elements = document.querySelectorAll('[data-lang-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-lang-key');
+            if (translations[lang] && translations[lang][key]) {
+                if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+                    el.placeholder = translations[lang][key];
+                } else if (el.tagName === 'BUTTON' && el.id === 'searchButton') {
+                    el.textContent = translations[lang][key];
+                } else {
+                    el.textContent = translations[lang][key];
+                }
+            }
+        });
+    }
+
+    setLanguage('en'); // Set default language to English
+
+    // Search functionality
+    document.getElementById('searchButton').addEventListener('click', function() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const tripCards = document.querySelectorAll('.trip-card');
+        tripCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const desc = card.querySelector('p').textContent.toLowerCase();
+            if (title.includes(query) || desc.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // Google Maps Integration
+    window.initMap = function() {
+        const location = { lat: 27.2577, lng: 33.8125 }; // Hurghada coordinates
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: location
+        });
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'Hurghada'
+        });
+    };
+});
     
     // ...
     // أكمل باقي كود الترجمة إذا كان موجودًا
 });
+
