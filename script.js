@@ -257,4 +257,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = () => {
     setLanguage('en'); 
+
 };
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // كود الألبومات المنزلقة (Image Sliders)
+    const sliders = document.querySelectorAll('.image-slider');
+    sliders.forEach(slider => {
+        const slides = slider.querySelector('.slider-images');
+        const images = slides.querySelectorAll('img');
+        const prevButton = slider.querySelector('.prev-button');
+        const nextButton = slider.querySelector('.next-button');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = 'none';
+                if (i === index) {
+                    img.style.display = 'block';
+                }
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        // عرض أول صورة عند تحميل الصفحة
+        showImage(currentIndex);
+    });
+
+    // كود القائمة المنبثقة للصور (Modal Gallery)
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeButton = document.querySelector('.close-button');
+    const prevImg = document.querySelector('.prev-img');
+    const nextImg = document.querySelector('.next-img');
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
+
+    // فتح النافذة المنبثقة عند النقر على أي صورة في الألبوم
+    document.querySelectorAll('.image-slider img').forEach((img, index) => {
+        img.addEventListener('click', function() {
+            // تحديث قائمة الصور الحالية بالألبوم الذي تم النقر عليه
+            const card = this.closest('.trip-card');
+            currentGalleryImages = Array.from(card.querySelectorAll('.image-slider img'));
+            currentImageIndex = currentGalleryImages.indexOf(this);
+
+            modal.style.display = 'block';
+            modalImg.src = this.src;
+        });
+    });
+
+    // إغلاق النافذة عند النقر على زر الإغلاق
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // إغلاق النافذة عند النقر خارج الصورة
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // التنقل إلى الصورة السابقة في الألبوم
+    prevImg.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : currentGalleryImages.length - 1;
+        modalImg.src = currentGalleryImages[currentImageIndex].src;
+    });
+
+    // التنقل إلى الصورة التالية في الألبوم
+    nextImg.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex < currentGalleryImages.length - 1) ? currentImageIndex + 1 : 0;
+        modalImg.src = currentGalleryImages[currentImageIndex].src;
+    });
+
+    // كود الترجمة (Translation Code)
+    const translations = {
+        ar: {
+            // أضف كل المفاتيح والقيم العربية هنا
+            // ...
+        },
+        en: {
+            // ...
+        },
+        de: {
+            // ...
+        },
+        ro: {
+            // ...
+        }
+    };
+    
+    // ...
+    // أكمل باقي كود الترجمة إذا كان موجودًا
+});
